@@ -1,4 +1,3 @@
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -42,11 +41,8 @@ public class Solutions {
 
         for (String str : dates) {
 
-
             List<String> partDate = List.of(str.split(" "));
-
             String yer = partDate.get(2);
-
             String mon = month.get(partDate.get(1));
 
             String d = partDate.get(0);
@@ -54,10 +50,7 @@ public class Solutions {
             String apDay = String.format("%02d", Integer.valueOf(day));
 
             System.out.println(yer + "-" + mon + "-" + apDay);
-
-
         }
-
     }
 
     List<Integer> allPrimeInRange(int numEnd) {
@@ -88,19 +81,16 @@ public class Solutions {
     }
 
     void exArrayList() {
-        ArrayList<String> al = new ArrayList<String>();
-        al.add("Mango");
-        al.add("Apple");
-        al.add("Banana");
-        al.add("Grapes");
-
-        // ArrayList list = new ArrayList();
+//        ArrayList<String> al = new ArrayList<String>();
+//        al.add("Mango");
+//        al.add("Apple");
+//        al.add("Banana");
+//        al.add("Grapes");
 
         String[] top11Templates = new String[]{"TEMPLATE_1", "TEMPLATE_2", "TEMPLATE_3", "TEMPLATE_4", "TEMPLATE_5",
-                "TEMPLATE_6",
-                "TEMPLATE_7", "TEMPLATE_8", "TEMPLATE_9", "TEMPLATE_10", "TEMPLATE_11"};
+                "TEMPLATE_6", "TEMPLATE_7", "TEMPLATE_8", "TEMPLATE_9", "TEMPLATE_10", "TEMPLATE_11"};
 
-        ArrayList<String> list = new ArrayList<String>(Arrays.asList(top11Templates));
+        ArrayList<String> list = new ArrayList<>(Arrays.asList(top11Templates));
 
         for (int i = 0; i < list.size(); i++) {
             System.out.println("Group ID :: " + list.get(i));
@@ -128,4 +118,54 @@ public class Solutions {
         System.out.println(odd);
     }
 
+    public int kthFactor() {
+        List<Integer> factors = new ArrayList<>();
+        int result = -1, n = 7, k = 2;
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                factors.add(i);
+            }
+        }
+        System.out.println(factors);
+        System.out.println(factors.size());
+        if (factors.size() >= k) {
+            result = factors.get(k - 1);
+        }
+        System.out.println(result);
+        return result;
+    }
+
+    public void checkingJdk17() {
+        String value = "Multi-line"
+                + "\n" // line separator
+                + "Text"
+                + "\n";
+        String str = "Multi-line\nText\n";
+
+        String value17 = """
+                Multi-line
+                Text
+                """;
+
+        System.out.println(value);
+        System.out.println(str);
+    }
+
+    public void superSubString() {
+        String s = "aaabccdddzzzzaaaccc";
+        String s2 = "aa";
+        String s3 = "baab";
+        String regex = "([a-z])\\1";
+        String result="";
+        do {
+            result = s.replaceFirst(regex, "");
+            s = result.replaceFirst(regex, "");
+        } while (!result.equals(s));
+
+        if (result.isEmpty()) {
+            result = "Empty String";
+        }
+        //return result;
+        System.out.println("res: " + result);
+    }
 }
