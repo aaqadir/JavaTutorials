@@ -92,8 +92,8 @@ public class Solutions {
 
         ArrayList<String> list = new ArrayList<>(Arrays.asList(top11Templates));
 
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println("Group ID :: " + list.get(i));
+        for (String s : list) {
+            System.out.println("Group ID :: " + s);
         }
     }
 
@@ -170,12 +170,14 @@ public class Solutions {
     }
 
     public void marsExploration() {
-        String msg = "SOS", res = "", inStr = "SOSTOT";
+        String msg = "SOS";
+        StringBuilder res = new StringBuilder();
+        String inStr = "SOSTOT";
         int count = 0;
         int msgCount = inStr.length() / 3;
         System.out.println(msgCount);
         while (msgCount > 0) {
-            res = res + msg;
+            res.append(msg);
             msgCount--;
 
         }
