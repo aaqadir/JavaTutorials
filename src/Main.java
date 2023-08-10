@@ -44,5 +44,17 @@ public class Main {
 
         //11. find substring with no repeating adjacent char
         sol.superSubString();
+
+        //12.input=SOSTOT, The original message was SOSSOS. return no of char that changed.
+        sol.marsExploration();
+
+        //13. For each query, print YES, if the string contains hackerrank, otherwise, print NO.
+        /*
+        * 2
+        * hereiamstackerrank - contains all the char in hackerrank in the same exact order, we return YES.
+        * hackerworld - does not contain the last three characters of hackerrank, so we return NO.
+        * */
+        sol.hackerrankInString();
+
     }
 }

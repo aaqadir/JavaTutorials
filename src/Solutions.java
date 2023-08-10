@@ -156,7 +156,7 @@ public class Solutions {
         String s2 = "aa";
         String s3 = "baab";
         String regex = "([a-z])\\1";
-        String result="";
+        String result = "";
         do {
             result = s.replaceFirst(regex, "");
             s = result.replaceFirst(regex, "");
@@ -167,5 +167,45 @@ public class Solutions {
         }
         //return result;
         System.out.println("res: " + result);
+    }
+
+    public void marsExploration() {
+        String msg = "SOS", res = "", inStr = "SOSTOT";
+        int count = 0;
+        int msgCount = inStr.length() / 3;
+        System.out.println(msgCount);
+        while (msgCount > 0) {
+            res = res + msg;
+            msgCount--;
+
+        }
+        System.out.println(res);
+
+        for (int i = 0; i < inStr.length(); i++) {
+            if (inStr.charAt(i) != res.charAt(i)) {
+                count++;
+            }
+        }
+        System.out.println(count);
+        //return count;
+    }
+
+    public void hackerrankInString() {
+        String inStr="hereiamstackerrank";
+        String inStr2="hackerworld";
+        String teststr = "hackerrank";
+        //List<Character> charList = new ArrayList<>();
+        char[] charList = inStr2.toCharArray();
+        int i = 0;
+        for (char c : charList) {
+            if (i < teststr.length() && c == teststr.charAt(i)) {
+                i++;
+            }
+            System.out.println(i);
+        }
+        if (i == 10) {
+            System.out.println("YES");
+        }
+        System.out.println("NO");
     }
 }
